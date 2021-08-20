@@ -18,6 +18,10 @@ spring:
 #          uri: lb://CART-SERVICE
 #          predicates:
 #            - Path=/cart/**
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/?waitQueueMultiple=1000
+      database: auth_db
 
 eureka:
   instance:
@@ -25,3 +29,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+jwt:
+  base64-secret: OGFhNDEwYjNkZTdmYzAzNDU4M2IzZmMwNjBkZmY0MmNkYzI5MDBjMDFhYjBhYjM2ODEyOTIxZTU3Nzg1NDVjNjM1MzZhODc5OTNjOTE0NDE1ZTVlZTBmMzExZmIxNDI2NGM1MzU1YTA4NDZmMjkzY2RiZGY1Y2VlNWIwYzdiNjA=
+  token-validity-in-seconds: 86400
+  token-validity-in-seconds-for-remember-me: 2592000
